@@ -3,6 +3,6 @@
 <%= form_tag chat_create_path(@channel), method: "post" do %>
   <%= label_tag(:message, "Enter Message") %>
   <%= text_field_tag(:message) %>
-  <%= submit_tag("Send") %>
+  <%= submit_tag("Post") %>
 
 <% end %>

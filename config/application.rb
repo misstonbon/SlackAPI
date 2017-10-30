@@ -17,5 +17,6 @@ module SlackAPI
 
     # Automatically load all code from <rails_root>/lib
     config.autoload_paths << Rails.root.join('lib')
+    #autoload everything in the lib folder 
   end
 end
