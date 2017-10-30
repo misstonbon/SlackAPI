@@ -12,7 +12,16 @@ class SlackApiWrapper
 
     data = HTTParty.get(url)
     if data["channels"]
-      return data["channels"]
+      my_channels = data["channels"].map do |channel_hash|
+        ap channel_hash
+        Channel.new channel_hash["name"],
+        channel_hash["id"], purpose:
+        channel_hash["purpose"], is_archived:
+        channel_hash["is_archived"], is_general:
+        channel_hash["is_general"], members:
+        channel_hash["members"]
+      end
+      return my_channels
     else
       return []
     end
